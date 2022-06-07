@@ -1,0 +1,62 @@
+html {
+  height: 100vh;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  height: 100vh;
+}
+
+.chats {
+  margin-top: 20px;
+
+  .date {
+    text-align: center;
+  }
+}
+
+.chat-block {
+  position: relative;
+  background: #d9d9d9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  padding: 20px;
+
+  + .chat-block {
+    margin-top: 20px;
+  }
+
+  &.left {
+    .date {
+      position: absolute;
+      bottom: 0;
+      right: -125px;
+    }
+  }
+
+  &.right {
+    .date {
+      position: absolute;
+      bottom: 0;
+      left: -125px;
+    }
+  }
+}
+
+.left {
+  margin-right: 45%;
+  margin-left: 10px;
+}
+
+.right {
+  margin-left: 45%;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.input {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
