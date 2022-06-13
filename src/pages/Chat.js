@@ -1,11 +1,16 @@
 import { Button01, Input02 } from "@the-statics/shared-components";
 import styles from "../pages/Chat.module.scss";
 import CHATROOMS from "../chatrooms.json";
+import { useNavigate } from "react-router-dom";
 
 function Chat() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles["chat-container"]}>
-      <Button01 type="button">뒤로</Button01>
+      <Button01 type="button" onClick={() => navigate(-1)}>
+        뒤로
+      </Button01>
       <div className={styles.chats}>
         <ul>
           {CHATROOMS[0].chats.map((chat, index) => (
