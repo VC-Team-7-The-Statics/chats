@@ -5,11 +5,18 @@ html {
 body {
   position: relative;
   margin: 0;
-  height: 100vh;
+}
+
+.chat-container {
+  position: relative;
 }
 
 .chats {
-  margin-top: 20px;
+  overflow-y: scroll;
+  min-height: calc(100vh - 142px);
+  max-height: calc(100vh - 142px);
+  padding-top: 20px;
+  padding-bottom: 70px;
 
   .date {
     text-align: center;
@@ -21,10 +28,16 @@ body {
   background: #d9d9d9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  padding: 20px;
 
   + .chat-block {
     margin-top: 20px;
+  }
+
+  .text {
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
   }
 
   &.left {
@@ -59,4 +72,8 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.button01-container {
+  background-color: red;
 }
