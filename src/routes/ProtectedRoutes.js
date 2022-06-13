@@ -1,7 +1,11 @@
+import { useSelector } from "react-redux";
 import { Navigate, Outlet } from "react-router-dom";
+import { selectChatroom } from "../features/chatroom/chatroomSlice";
 
-function ProtectedRoutes({ isLoggedIn }) {
-  if (!isLoggedIn) {
+function ProtectedRoutes() {
+  const chatroom = useSelector(selectChatroom);
+
+  if (!chatroom?.id) {
     return <Navigate to="/welcome" replace />;
   }
 

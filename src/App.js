@@ -8,29 +8,28 @@ import { useDispatch } from "react-redux";
 import { useQuery } from "react-query";
 import ApiService from "./services/Api";
 import axios from "axios";
-import { setUser } from "./features/user/userSlice";
+import { setChatroom } from "./features/chatroom/chatroomSlice";
 
 const ApiInstance = new ApiService(axios);
 
 function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  const { isLoading } = useQuery("myProfile", ApiInstance.getProfile, {
+  const { isLoading } = useQuery("chatlist", ApiInstance.getChatlist, {
     onSuccess: ({ data }) => {
       if (!data.success) {
         return navigate("/welcome");
       }
 
-      const user = {
-        id: data.profile._id,
-        name: data.profile.name,
-        image: data.profile.image,
+      const chatroom = {
+        id: data.id,
+        name: data.name,
+        image: data.image,
+        chatrooms: data.chatrooms,
       };
 
-      dispatch(setUser(user));
+      dispatch(setChatroom(chatroom));
     },
-    staleTime: Infinity,
   });
 
   if (isLoading) {
