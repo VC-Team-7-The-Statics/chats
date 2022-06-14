@@ -1,6 +1,42 @@
-.chat-list {
-  + .chat-list {
+.chatlist-container {
+  padding: 20px 10px;
+
+  & > .title {
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  .chatlists {
     margin-top: 20px;
   }
-  // background: red;
+}
+
+.chat-list {
+  position: relative;
+  height: 70px;
+  border-bottom: 1px solid rgb(227, 227, 227);
+  padding-left: 100px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+  .image-container {
+    position: absolute;
+    left: 15px;
+  }
+
+  .content {
+    position: relative;
+    padding-top: 15px;
+
+    .name {
+      font-size: 25px;
+    }
+  }
+}
+
+img {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
 }
