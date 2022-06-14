@@ -6,8 +6,16 @@
     font-size: 20px;
   }
 
-  .chatlists {
-    margin-top: 20px;
+  .chatlists-container {
+    .notification-container {
+      min-height: calc(100vh - 40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .chatlists {
+      margin-top: 20px;
+    }
   }
 }
 
