@@ -3,7 +3,6 @@ import { Button01, Input02 } from "@the-statics/shared-components";
 import styles from "../pages/Chat.module.scss";
 import CHATROOMS from "../chatrooms.json";
 import { useNavigate } from "react-router-dom";
-import "../_reset.scss";
 import { io } from "socket.io-client";
 import { useEffect, useState } from "react";
 import { selectChatroom } from "../features/chatroom/chatroomSlice";

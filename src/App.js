@@ -9,6 +9,7 @@ import { useQuery } from "react-query";
 import ApiService from "./services/Api";
 import axios from "axios";
 import { setChatroom } from "./features/chatroom/chatroomSlice";
+import CoffeeLoading from "./pages/CoffeeLoading";
 
 const ApiInstance = new ApiService(axios);
 
@@ -33,7 +34,7 @@ function App() {
   });
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <CoffeeLoading />;
   }
 
   return (
