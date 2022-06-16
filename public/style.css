@@ -101,6 +101,7 @@
     font-size: 100%;
     /* font: inherit; */
     vertical-align: baseline;
+    font-family: "Nanum Gothic", sans-serif;
   }
   /* HTML5 display-role reset for older browsers */
   article,

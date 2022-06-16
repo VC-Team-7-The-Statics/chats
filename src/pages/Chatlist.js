@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import styles from "../pages/Chatlist.module.scss";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { selectChatroom } from "../features/chatroom/chatroomSlice";
 
 function Chatlist() {
@@ -36,32 +35,23 @@ function Chatlist() {
 
         <ul className={styles["chatlists"]}>
           {user.chatrooms.map((chatroom, i) => (
-            <>
-              <li key={i} className={styles["chat-list"]}>
-                <Link to={`/chat/${chatroom.roomId}`} key={i}>
-                  <div className={styles["chat-card-container"]}>
-                    <div className={styles["image-container"]}>
-                      <img src={chatroom.image} alt="profile" />
-                    </div>
-                    <div className={styles.content}>
-                      <h2 className={styles.name}>{chatroom.name}</h2>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            </>
+            <li
+              key={i}
+              className={styles["chat-list"]}
+              onClick={handleClick(chatroom)}
+            >
+              <div className={styles["chat-card-container"]}>
+                <div className={styles["image-container"]}>
+                  <img src={chatroom.image} alt="profile" />
+                </div>
+                <div className={styles.content}>
+                  <h2 className={styles.name}>{chatroom.name}</h2>
+                  <p className={styles.paragraph}>대화하기</p>
+                </div>
+              </div>
+            </li>
           ))}
         </ul>
-        {/* 
-        <div>
-      <Title value="채팅" />
-      <ul className={styles["chat-list-container"]}>
-        <li className={styles["chat-list"]}>
-          {user.chatrooms.map((chatroom, i) => (
-            <div key={i} onClick={handleClick(chatroom)}>
-              <ChatCard profileImage={chatroom.image} name={chatroom.name} />
-            </div>
-         */}
       </div>
     </div>
   );

@@ -1,35 +1,38 @@
 .chatlist-container {
-  padding: 20px 10px;
+  padding: 30px 20px;
 
   & > .title {
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .chatlists-container {
+    margin-top: 30px;
+
     .notification-container {
       min-height: calc(100vh - 40px);
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    .chatlists {
-      margin-top: 20px;
-    }
   }
+}
+
+.chat-list:first-of-type {
+  border-top: 1px solid rgb(227, 227, 227);
 }
 
 .chat-list {
   position: relative;
   height: 70px;
   border-bottom: 1px solid rgb(227, 227, 227);
-  padding-left: 100px;
+  padding-left: 95px;
   padding-bottom: 15px;
   padding-top: 15px;
 
   .image-container {
     position: absolute;
-    left: 15px;
+    left: 0px;
   }
 
   .content {
@@ -37,7 +40,17 @@
     padding-top: 15px;
 
     .name {
-      font-size: 25px;
+      font-size: 22px;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .paragraph {
+      margin-top: 10px;
+      font-size: 15px;
+      color: rgb(75, 75, 75);
     }
   }
 }
