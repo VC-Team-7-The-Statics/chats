@@ -6,6 +6,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+    <% if (process.env.NODE_ENV === 'production') { %>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <% } %>
     <meta name="theme-color" content="#000000" />
     <link rel="stylesheet" href="style.css" />
     <title>Chats Screen</title>
