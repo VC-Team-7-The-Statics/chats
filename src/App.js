@@ -9,6 +9,7 @@ import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Chatlist from "./pages/Chatlist";
 import ApiService from "./services/Api";
 import { setChatroom } from "./features/chatroom/chatroomSlice";
+import CoffeeLoading from "./pages/CoffeeLoading";
 
 const ApiInstance = new ApiService(axios);
 
@@ -34,7 +35,7 @@ function App() {
   });
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <CoffeeLoading />;
   }
 
   return (
