@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styles from "../pages/Chatlist.module.scss";
 import { useSelector } from "react-redux";
 import { selectChatroom } from "../features/chatroom/chatroomSlice";
