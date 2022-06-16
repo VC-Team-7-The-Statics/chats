@@ -42,7 +42,7 @@ function App() {
     <div className="container">
       <Routes>
         <Route element={<ProtectedRoutes />}>
-          <Route path="/chatlist" element={<Chatlist />} />
+          <Route path="/" element={<Chatlist />} />
         </Route>
         <Route path="/welcome" element={<h1>Welcome page</h1>} />
       </Routes>
