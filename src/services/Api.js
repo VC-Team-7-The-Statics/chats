@@ -12,9 +12,9 @@ class ApiService {
     });
   }
 
-  getProfile = () => this.API.get("/user/profile");
+  getProfile = () => this.API.get("/api/user/profile");
 
-  getChatlist = () => this.API.get("/chat/list");
+  getChatlist = () => this.API.get("/api/chat/list");
 }
 
 export default ApiService;
