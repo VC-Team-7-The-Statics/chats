@@ -1,7 +1,7 @@
 class ApiService {
   constructor(axios) {
     this.API = axios.create({
-      baseURL: "/",
+      baseURL: "/api",
       timeout: 5000,
     });
 
@@ -12,9 +12,9 @@ class ApiService {
     });
   }
 
-  getProfile = () => this.API.get("/api/user/profile");
+  getProfile = () => this.API.get("/user/profile");
 
-  getChatlist = () => this.API.get("/api/chat/list");
+  getChatlist = () => this.API.get("/chat/list");
 }
 
 export default ApiService;
