@@ -3,9 +3,9 @@ import { Navigate, Outlet } from "react-router-dom";
 import { selectChatroom } from "../features/chatroom/chatroomSlice";
 
 function ProtectedRoutes() {
-  const chatroom = useSelector(selectChatroom);
+  const user = useSelector(selectChatroom);
 
-  if (!chatroom?.id) {
+  if (!user.name) {
     return <Navigate to="/welcome" replace />;
   }
 
