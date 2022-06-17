@@ -17,10 +17,11 @@ function App() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isLoading } = useQuery("chatlist", ApiInstance.getChatlist, {
+  const { isLoading, refetch } = useQuery("chatlist", ApiInstance.getChatlist, {
     onSuccess: ({ data }) => {
       if (!data.success) {
-        return navigate("/welcome");
+        refetch();
+        return navigate("/welcome", { replace: true });
       }
 
       const chatroom = {
@@ -44,7 +45,7 @@ function App() {
         <Route element={<ProtectedRoutes />}>
           <Route path="/" element={<Chatlist />} />
         </Route>
-        <Route path="/welcome" element={<h1>Welcome page</h1>} />
+        <Route path="/welcome" element={<CoffeeLoading />} />
       </Routes>
     </div>
   );
