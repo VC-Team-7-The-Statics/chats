@@ -1,13 +1,9 @@
 .chatlist-container {
   padding: 20px 20px;
 
-  & > .title {
-    font-weight: bolder;
-    font-size: 30px;
-  }
-
   .chatlists-container {
     margin-top: 20px;
+    border-top: 1px solid rgb(227, 227, 227);
 
     .notification-container {
       min-height: calc(100vh - 40px);
